@@ -21,5 +21,16 @@ SignUpButton.addEventListener("click",()=>{
     else{
       alert("there is an error");
     }
+
+    let response = fetch("http://127.0.0.1:8000/get_username_and_password", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ 
+        username:InputUsername,
+        password:InputPassword
+       })
+    });
   })
 })

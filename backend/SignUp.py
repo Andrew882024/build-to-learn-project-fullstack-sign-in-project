@@ -9,6 +9,10 @@ app = FastAPI()
 class username_class(BaseModel):
   username:str
 
+class UserNameAndPassword(BaseModel):
+  username:str
+  password:str
+
 username_and_passworrd_dictionary = {
   "test_username":"test_password"
 }
@@ -33,3 +37,8 @@ def username_check_if_exist(username_need_to_check:str):
     return "exist"
   else:
     return "not_exist"
+  
+@app.post("/get_username_and_password")
+def get_username_and_password(item:UserNameAndPassword):
+  username_and_passworrd_dictionary[item.username] = item.password
+  return f"{item.username} and {item.password}"
