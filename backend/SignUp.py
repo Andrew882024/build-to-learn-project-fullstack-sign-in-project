@@ -38,7 +38,15 @@ def username_check_if_exist(username_need_to_check:str):
   else:
     return "not_exist"
   
+@app.get("/check_whether_username_and_password_match/{username}/{password}")
+def check_whether_username_and_password_match(username:str,password:str):
+  if(username_and_passworrd_dictionary[username] == password):
+    return "username_and_password_match"
+  else:
+    return "username_and_password_does_not_match"
+  
 @app.post("/get_username_and_password")
 def get_username_and_password(item:UserNameAndPassword):
   username_and_passworrd_dictionary[item.username] = item.password
   return f"{item.username} and {item.password}"
+

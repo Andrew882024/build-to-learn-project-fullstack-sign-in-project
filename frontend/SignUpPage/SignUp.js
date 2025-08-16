@@ -35,6 +35,7 @@ SignUpButton.addEventListener("click",async ()=>{
     }
     else if(whether_exist === "not_exist"){
       console.log("this username does not exist before, the username is ok");
+      functionEnd = false;
     }
     else{
       alert("there is an error");
