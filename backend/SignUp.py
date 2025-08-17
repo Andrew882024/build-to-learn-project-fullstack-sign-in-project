@@ -84,21 +84,24 @@ app.add_middleware(
 
 @app.get("/username_check_if_exist/{username_need_to_check}")
 def username_check_if_exist(username_need_to_check:str):
-  if(username_need_to_check in username_and_passworrd_dictionary):
+  #if(username_need_to_check in username_and_passworrd_dictionary):
+  if(whether_this_item_exist_in_this_column("username",username_need_to_check)==True):
     return "exist"
   else:
     return "not_exist"
   
 @app.get("/check_whether_username_and_password_match/{username}/{password}")
 def check_whether_username_and_password_match(username:str,password:str):
-  if(username_and_passworrd_dictionary[username] == password):
+  #if(username_and_passworrd_dictionary[username] == password):
+  if(whether_password_match_username(username,password) == True):
     return "username_and_password_match"
   else:
     return "username_and_password_does_not_match"
   
 @app.post("/get_username_and_password")
 def get_username_and_password(item:UserNameAndPassword):
-  username_and_passworrd_dictionary[item.username] = item.password
+  #username_and_passworrd_dictionary[item.username] = item.password
+  add_new_user_infor("username","passwd",item.username,item.password)
   return f"{item.username} and {item.password}"
 
 
