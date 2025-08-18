@@ -72,7 +72,7 @@ username_and_passworrd_dictionary = {
 # def username_sign_up():
 #   return username
 
-origins = ["http://127.0.0.1:5500"]
+origins = ["http://127.0.0.1:5500","https://andrew882024.github.io "]
 
 app.add_middleware(
   CORSMiddleware,
