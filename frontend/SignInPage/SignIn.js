@@ -41,6 +41,7 @@ signInButton.addEventListener("click",async()=>{
   .then((whether_match)=>{
     if(whether_match === "username_and_password_match"){
       alert("username and password match, you are signed in");
+      window.location.href="./YouAreSignedIn.html";
     }
     else if(whether_match === "username_and_password_does_not_match"){
       alert("username and password does not match, try again");
