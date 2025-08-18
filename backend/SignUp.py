@@ -11,7 +11,8 @@ import mysql.connector
 #                              database function                               #
 #//////////////////////////////////////////////////////////////////////////////#
 
-mydb = mysql.connector.connect(host="localhost",user="root",passwd="root",database="build_to_learn_sign_in_database")
+#mydb = mysql.connector.connect(host="localhost",user="root",passwd="root",database="build_to_learn_sign_in_database")
+mydb = mysql.connector.connect(host="database-1.cvmsygyomout.us-east-2.rds.amazonaws.com",user="Andrew",passwd="passwordfordatabase",database="remote_build_to_learn_sign_in_database")
 
 mycursor = mydb.cursor()
 
