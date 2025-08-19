@@ -1,3 +1,6 @@
+//let httplink = "http://127.0.0.1:8000";
+let httplink = "http://13.59.93.253:8000";
+
 let InputUsername = null;
 let InputPassword = null;
 
@@ -16,7 +19,7 @@ signInButton.addEventListener("click",async()=>{
   }
 
   let functionEnd = false;
-  await fetch(`http://127.0.0.1:8000/username_check_if_exist/${InputUsername}`)
+  await fetch(`${httplink}/username_check_if_exist/${InputUsername}`)
   .then((temp)=>temp.json())
   .then((whether_exist)=>{
     console.log(whether_exist);
@@ -36,7 +39,7 @@ signInButton.addEventListener("click",async()=>{
     return;
   }
 
-  await fetch(`http://127.0.0.1:8000/check_whether_username_and_password_match/${InputUsername}/${InputPassword}`)
+  await fetch(`${httplink}/check_whether_username_and_password_match/${InputUsername}/${InputPassword}`)
   .then((output)=>output.json())
   .then((whether_match)=>{
     if(whether_match === "username_and_password_match"){
