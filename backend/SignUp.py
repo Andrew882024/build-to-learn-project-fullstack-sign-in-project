@@ -105,6 +105,9 @@ def get_username_and_password(item:UserNameAndPassword):
   add_new_user_infor("username","passwd",item.username,item.password)
   return f"{item.username} and {item.password}"
 
+@app.get("/")
+def test():
+  return "hello, the test for docker passed"
 
 
 
